@@ -47,7 +47,7 @@ function flipCardsBack() {
     })
 }
 
-function evaluateCards() {
+function evaluateCards(currentTurn) {
     let slothClickArray = document.querySelectorAll('.sloth');
     if (firstClickPair !== secondClickPair) {
         slothClickArray.forEach(sloth => {
@@ -59,9 +59,17 @@ function evaluateCards() {
             sloth.classList.remove('selected')
         })
         matchedPairs++
+        isGameFinished(matchedPairs, turnCounter)
     }
 }
 
 function displayTurnCounter (currentTurn) {
-    document.querySelector('.turns').innerHTML = '<p>Turns: ' + currentTurn + '</p>'
+    document.querySelector('.turns-box').innerHTML =  '<p>Turns: ' + currentTurn + '</p>'
+}
+
+function isGameFinished(matchedPairs, currentTurn) {
+    if (matchedPairs===1) { //change back to 8
+        document.querySelector('.turns').innerHTML = currentTurn
+        document.querySelector('.modal').classList.remove('hide')
+    }
 }

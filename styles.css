@@ -78,10 +78,6 @@ h2 {
     left: 0;
 }
 
-.hide {
-    display: none;
-}
-
 .timer {
     background-color: #35205E;
     width:150px;
@@ -92,7 +88,7 @@ h2 {
     padding-top: 10px;
 }
 
-.turns {
+.turns-box {
     background-color: #35205E;
     width:150px;
     height: 50px;
@@ -106,8 +102,6 @@ h2 {
     margin-left: 50px;
     margin-top: 20px;
 }
-
-
 
 .modal {
     background-color: #DD7DE8;
@@ -123,6 +117,11 @@ h2 {
     margin: auto;
     padding: 25px 50px;
     font-size: 2rem;
+    display: block;
+}
+
+.modal.hide {
+    display: none;
 }
 
 .hide {
