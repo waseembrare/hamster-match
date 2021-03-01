@@ -78,4 +78,6 @@ for (let i = 0; i < cardDivArray.length; i++) {
         + '<img class="sloth" data-pair ="' + shuffledCardsArray[i].pairId + '" src= "images/cardBack.jpg">';
 }
 
+
 addClickListener(onClick)
+

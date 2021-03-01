@@ -25,6 +25,7 @@ function onClick() {
     } else {
         clickCounter--
         turnCounter++
+        displayTurnCounter(turnCounter)
         secondClickPair = this.dataset.pair
         evaluateCards()
     }
@@ -59,4 +60,8 @@ function evaluateCards() {
         })
         matchedPairs++
     }
+}
+
+function displayTurnCounter (currentTurn) {
+    document.querySelector('.turns').innerHTML = '<p>Turns: ' + currentTurn + '</p>'
 }
