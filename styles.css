@@ -1,0 +1,154 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #BAD9D8;
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #C5C2CC;
+    color: #35205E;
+    padding: 10px;
+}
+
+.score-area {
+    width: 100%;
+    padding-top: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.instructions ul {
+    list-style: none;
+    font-family: Verdana, Calibri;
+    font-size: 1.7rem;
+    padding-left: 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.game-area {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 750px;
+    height: 750px;
+    margin: 0 auto;
+}
+
+.card-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.card {
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+
+.hamster {
+    z-index: -5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.timer {
+    background-color: #35205E;
+    width:150px;
+    height: 50px;
+    margin-top: 5px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.turns-box {
+    background-color: #35205E;
+    width:150px;
+    height: 50px;
+    margin-top: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.scores-container {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.modal {
+    background-color: #DD7DE8;
+    color: #35205E;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+    text-align: center;
+    width: 50%;
+    position: fixed;
+    top: 70px;
+    left: 25%;
+    margin: auto;
+    padding: 25px 50px;
+    font-size: 2rem;
+    display: block;
+    z-index: 10;
+}
+
+.modal.hide {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.luca {
+    text-align: center;
+    margin: 10px;
+}
+
+@media screen and (max-width: 853px) {
+    .score-screen {
+        display: block;
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 687px) {
+    .score-screen {
+        display: block;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 518px) {
+    .score-screen {
+        display: block;
+        font-size: 0.75rem;
+    }
+}
