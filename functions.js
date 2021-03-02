@@ -19,6 +19,9 @@ function onClick() {
     let slothClickArray = document.querySelectorAll('.sloth');
     this.classList.add('hide');
     this.classList.add('selected');
+    if (turnCounter === 0 && clickCounter === 0) {
+        startStopwatch()
+    }
     if (clickCounter === 0) {
         firstClickPair = this.dataset.pair
         clickCounter++
@@ -47,13 +50,13 @@ function flipCardsBack() {
     })
 }
 
-function evaluateCards(currentTurn) {
+function evaluateCards() {
     let slothClickArray = document.querySelectorAll('.sloth');
     if (firstClickPair !== secondClickPair) {
         slothClickArray.forEach(sloth => {
             sloth.removeEventListener('click', onClick)
         })
-        setTimeout(flipCardsBack, 2000);
+        setTimeout(flipCardsBack, 1500);
     } else {
         slothClickArray.forEach(sloth => {
             sloth.classList.remove('selected')
@@ -68,8 +71,27 @@ function displayTurnCounter (currentTurn) {
 }
 
 function isGameFinished(matchedPairs, currentTurn) {
-    if (matchedPairs===1) { //change back to 8
+    if (matchedPairs === 8) {
+        let showFinalTime = stopStopwatch()
+        document.querySelector('.show-final-time').innerHTML = showFinalTime
         document.querySelector('.turns').innerHTML = currentTurn
         document.querySelector('.modal').classList.remove('hide')
     }
+}
+
+function startStopwatch() {
+    clearInterval(timer);
+    timer = setInterval(()=>{
+        milliseconds += 10;
+        let dateTimer = new Date(milliseconds);
+        gameTimer.innerHTML =
+            ('0'+dateTimer.getUTCMinutes()).slice(-2) + ':' +
+            ('0'+dateTimer.getUTCSeconds()).slice(-2)
+    },10);
+}
+
+function stopStopwatch() {
+    clearInterval(timer);
+    finalTime = document.querySelector('.game-timer').textContent
+    return finalTime
 }

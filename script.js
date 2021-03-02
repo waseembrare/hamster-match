@@ -72,6 +72,11 @@ let secondClickPair = "start"
 let matchedPairs = 0
 let shuffledCardsArray = shuffleCards(cardObjectsArray);
 let cardDivArray = document.querySelectorAll('.card');
+let gameTimer = document.querySelector('.game-timer');
+let milliseconds = 0;
+let timer;
+let finalTime = '';
+
 
 for (let i = 0; i < cardDivArray.length; i++) {
     cardDivArray[i].innerHTML = '<img class="hamster" src="' + shuffledCardsArray[i].frontOfCard + '">'

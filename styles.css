@@ -118,6 +118,7 @@ h2 {
     padding: 25px 50px;
     font-size: 2rem;
     display: block;
+    z-index: 10;
 }
 
 .modal.hide {
@@ -126,6 +127,11 @@ h2 {
 
 .hide {
     display: none;
+}
+
+.luca {
+    text-align: center;
+    margin: 10px;
 }
 
 @media screen and (max-width: 853px) {
